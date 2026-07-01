@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joel Daniel Dorantes Sosa</title>
+<meta name="description" content="Portafolio de Joel Daniel Dorantes Sosa, especialista en marketing y patrocinio deportivo enfocado en clubes profesionales de fútbol.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FFFFFF;
+    --paper-dim:#F4F5F4;
+    --ink:#15171A;
+    --ink-soft:#454B4F;
+    --ink-faint:#8B9296;
+    --line: rgba(21,23,26,0.12);
+    --accent:#1B4B5A;
+    --accent-soft:#1B4B5A1A;
+    --moss:#3F6B4E;
+    --terracotta:#C1592B;
+    --max:680px;
+    --max-wide:760px;
+    --max-grid:920px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Lora', Georgia, serif;
+    font-size:19px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Lora', Georgia, serif;
+    font-weight:500;
+    line-height:1.18;
+    margin:0;
+    color:var(--ink);
+  }
+  .sans{
+    font-family:'Source Sans 3', Helvetica, Arial, sans-serif;
+  }
+  a{color:var(--accent); text-decoration:underline; text-decoration-color:rgba(27,75,90,0.35); text-decoration-thickness:1px; text-underline-offset:2px; transition:text-decoration-color 0.15s;}
+  a:hover{text-decoration-color:var(--accent);}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+  .wrap-wide{max-width:var(--max-wide); margin:0 auto; padding:0 24px;}
+  .wrap-grid{max-width:var(--max-grid); margin:0 auto; padding:0 24px;}
+  ::selection{background:var(--accent); color:#fff;}
+  :focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+
+  /* ============ HEADER / NAV ============ */
+  header{
+    padding:28px 0;
+  }
+  .nav-inner{
+    display:flex; justify-content:space-between; align-items:center;
+    max-width:var(--max-wide); margin:0 auto; padding:0 24px;
+  }
+  .brand{
+    font-family:'Lora', Georgia, serif; font-size:1.05rem; font-weight:600;
+    color:var(--ink); text-decoration:none;
+    background:none; border:none; padding:0; cursor:pointer;
+    transition:color 0.15s;
+  }
+  .brand:hover{color:var(--accent);}
+  nav ul{
+    list-style:none; display:flex; gap:26px; margin:0; padding:0;
+  }
+  nav ul button{
+    font-family:'Source Sans 3', sans-serif; font-size:0.92rem;
+    text-decoration:none; color:var(--ink-soft);
+    background:none; border:none; border-bottom:1px solid transparent;
+    padding:0; cursor:pointer;
+    transition:color 0.15s, border-color 0.15s;
+  }
+  nav ul button:hover{color:var(--accent); border-bottom-color:var(--accent);}
+  .nav-toggle{display:none; background:none; border:none; color:var(--ink); font-size:1.4rem; cursor:pointer; font-family:'Source Sans 3',sans-serif;}
+
+  @media (max-width: 700px){
+    nav#mainNav{display:none;}
+    .nav-toggle{display:block;}
+    nav#mainNav.open{
+      display:flex; flex-direction:column; align-items:flex-start; gap:14px;
+      position:absolute; left:0; right:0; top:100%;
+      background:var(--paper); border-bottom:1px solid var(--line);
+      max-width:var(--max-wide); margin:0 auto; padding:0 24px 20px;
+    }
+    nav#mainNav.open ul{flex-direction:column; gap:14px; width:100%;}
+  }
+
+  hr.rule{
+    border:none; border-top:1px solid var(--line); margin:0;
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    padding:96px 0 88px;
+    overflow:hidden;
+  }
+  .hero-bg{
+    position:absolute; inset:0;
+    z-index:0;
+  }
+  .hero-bg img{
+    width:100%; height:100%; object-fit:cover;
+    filter:grayscale(1) contrast(1.05) brightness(0.95);
+    opacity:0.16;
+  }
+  .hero-bg::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, var(--paper) 0%, rgba(255,255,255,0.88) 55%, var(--paper) 100%);
+  }
+  .hero-inner{
+    position:relative; z-index:1;
+    max-width:var(--max-wide); margin:0 auto; padding:0 24px;
+  }
+  .hero-kicker{
+    font-family:'Source Sans 3', sans-serif; font-size:0.92rem; font-weight:600;
+    color:var(--terracotta);
+    letter-spacing:0.02em;
+    margin-bottom:18px;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .hero-kicker::before{
+    content:""; width:7px; height:7px; border-radius:50%; background:var(--terracotta);
+  }
+  .hero h1{
+    font-size:clamp(2.3rem, 5.2vw, 3.4rem);
+    letter-spacing:-0.01em;
+  }
+  .hero p.lede{
+    font-size:1.18rem; color:var(--ink-soft); margin:22px 0 0; max-width:560px;
+  }
+
+  @media (max-width: 700px){
+    .hero{padding:72px 0 64px;}
+  }
+
+  /* ============ SECTION SCAFFOLDING ============ */
+  section{padding:56px 0;}
+  .section-label{
+    font-family:'Source Sans 3', sans-serif; font-size:0.82rem; font-weight:600;
+    letter-spacing:0.06em; text-transform:uppercase; color:var(--moss);
+    margin-bottom:22px;
+  }
+  section h2{font-size:clamp(1.5rem, 2.6vw, 1.9rem); margin-bottom:24px;}
+  .section-subtitle{
+    font-family:'Source Sans 3', sans-serif; font-size:0.98rem; color:var(--ink-soft);
+    margin:-12px 0 28px; max-width:620px; line-height:1.6;
+  }
+  .skills-note{
+    font-family:'Source Sans 3', sans-serif; font-size:0.86rem; color:var(--ink-faint);
+    margin-top:36px; padding-top:20px; border-top:1px solid var(--line);
+  }
+
+  /* ============ SOBRE MI ============ */
+  #sobre-mi p{color:var(--ink-soft); margin:0 0 20px;}
+  #sobre-mi strong{color:var(--ink); font-weight:600;}
+  .credentials{
+    font-family:'Source Sans 3', sans-serif; font-size:0.92rem; color:var(--ink-faint);
+    margin-top:28px; line-height:1.8;
+  }
+  .credentials span{display:block;}
+
+  /* ============ PROYECTOS — grid de 3 columnas con imagen ============ */
+  .project-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:36px 28px;
+    margin-top:8px;
+  }
+  .project-item{
+    cursor:pointer;
+  }
+  .project-thumb{
+    width:64px; height:64px; border-radius:8px;
+    background:var(--paper-dim);
+    margin-bottom:16px;
+    display:flex; align-items:center; justify-content:center;
+    transition:background 0.2s;
+  }
+  .project-thumb svg{
+    width:30px; height:30px;
+    stroke:var(--ink-soft);
+    fill:none;
+    stroke-width:1.6;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    transition:stroke 0.2s;
+  }
+  .project-item:hover .project-thumb{background:var(--accent);}
+  .project-item:hover .project-thumb svg{stroke:#fff;}
+  .project-item.featured .project-thumb{
+    width:88px; height:88px; border-radius:10px;
+  }
+  .project-item.featured .project-thumb svg{
+    width:42px; height:42px;
+  }
+  .project-head{
+    display:flex; flex-direction:column; gap:6px;
+    align-items:flex-start;
+  }
+  .project-title{
+    font-size:1.06rem; font-weight:500;
+    text-decoration:none;
+    line-height:1.5;
+    display:inline;
+    background:var(--terracotta);
+    color:#fff;
+    padding:2px 8px;
+    border-radius:2px;
+    box-decoration-break:clone;
+    -webkit-box-decoration-break:clone;
+  }
+  .project-item:hover .project-title{background:var(--accent); color:#fff; text-decoration:none;}
+  .project-meta{
+    font-family:'Source Sans 3', sans-serif; font-size:0.78rem; color:var(--ink-faint);
+    margin-top:4px;
+  }
+  .project-desc{
+    font-family:'Source Sans 3', sans-serif; font-size:0.88rem; color:var(--ink-soft);
+    margin-top:8px; line-height:1.55;
+  }
+  .tfm-eyebrow{
+    display:block; font-family:'Source Sans 3', sans-serif; font-size:0.74rem; font-weight:600;
+    color:var(--terracotta); margin-bottom:6px; letter-spacing:0.02em;
+  }
+
+  /* ---- Tarjeta destacada del TFM ---- */
+  .project-item.featured{
+    grid-column:1 / -1;
+    display:flex;
+    align-items:flex-start;
+    gap:28px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:32px;
+    margin-bottom:8px;
+  }
+  .project-item.featured .project-thumb{
+    margin-bottom:0; flex-shrink:0;
+  }
+  .project-item.featured .project-title{
+    font-size:1.3rem;
+  }
+  .project-item.featured .project-desc{
+    font-size:0.96rem; max-width:480px;
+  }
+  .project-item.featured .tfm-eyebrow{
+    font-size:0.8rem;
+  }
+  .featured-cta{
+    margin-top:16px;
+  }
+
+  @media (max-width: 600px){
+    .project-item.featured{flex-direction:column; padding:24px;}
+  }
+
+  @media (max-width: 860px){
+    .project-grid{grid-template-columns:repeat(2, 1fr);}
+  }
+  @media (max-width: 580px){
+    .project-grid{grid-template-columns:1fr;}
+  }
+
+  /* ============ HABILIDADES ============ */
+  .skills-cols{
+    display:grid; grid-template-columns:1fr 1fr 1fr; gap:40px;
+  }
+  .skill-col h3{
+    font-size:1.05rem; margin-bottom:14px;
+  }
+  .skill-col ul{
+    list-style:none; margin:0; padding:0;
+    font-family:'Source Sans 3', sans-serif; font-size:0.94rem; color:var(--ink-soft);
+  }
+  .skill-col li{padding:7px 0; line-height:1.4;}
+
+  @media (max-width: 700px){
+    .skills-cols{grid-template-columns:1fr; gap:28px;}
+  }
+
+  /* ============ CONTACTO ============ */
+  #contacto p{color:var(--ink-soft); max-width:520px;}
+  .contact-list{
+    font-family:'Source Sans 3', sans-serif; font-size:1.02rem;
+    margin-top:24px; line-height:2.1;
+  }
+  .contact-list div{display:flex; gap:10px;}
+  .contact-list span.label{color:var(--ink-faint); min-width:84px;}
+
+  footer{
+    padding:40px 0 56px;
+    font-family:'Source Sans 3', sans-serif; font-size:0.82rem; color:var(--ink-faint);
+  }
+  footer .wrap-wide{display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+
+  /* ============ MODAL ============ */
+  .modal-overlay{
+    position:fixed; inset:0; z-index:100;
+    background:rgba(28,26,22,0.45);
+    display:none;
+    align-items:center; justify-content:center;
+    padding:24px;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal-panel{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:3px;
+    max-width:560px; width:100%;
+    max-height:85vh; overflow-y:auto;
+    padding:44px 40px;
+    position:relative;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.25);
+  }
+  .modal-close{
+    position:absolute; top:20px; right:20px;
+    background:none; border:none; color:var(--ink-faint);
+    width:30px; height:30px; cursor:pointer;
+    font-size:1.1rem; line-height:1; font-family:'Source Sans 3',sans-serif;
+    transition:color 0.15s;
+  }
+  .modal-close:hover{color:var(--ink);}
+  .modal-tag{
+    font-family:'Source Sans 3', sans-serif; font-size:0.82rem; font-weight:600;
+    letter-spacing:0.03em; color:var(--moss);
+  }
+  .modal-title{
+    font-size:1.6rem; margin:12px 0 18px;
+  }
+  .modal-desc{
+    font-family:'Source Sans 3', sans-serif; color:var(--ink-soft); font-size:1rem; margin:0 0 26px; line-height:1.65;
+  }
+  .modal-actions{display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-bottom:16px; font-family:'Source Sans 3', sans-serif; font-size:0.96rem;}
+  .btn-drive{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'Source Sans 3', sans-serif; font-size:0.86rem; font-weight:600;
+    color:#fff; background:var(--accent);
+    padding:9px 16px; border-radius:3px;
+    text-decoration:none;
+    transition:background 0.15s;
+  }
+  .btn-drive:hover{background:#123841; text-decoration:none;}
+  .btn-drive.disabled{
+    background:var(--paper-dim); color:var(--ink-faint);
+    cursor:default; pointer-events:none;
+  }
+  .modal-actions .btn-drive{font-size:0.92rem; padding:10px 18px;}
+  .btn-link{
+    background:none; border:none; padding:0; cursor:pointer;
+    font-family:'Source Sans 3', sans-serif; font-size:0.96rem;
+    color:var(--accent); text-decoration:underline;
+    text-decoration-color:rgba(27,75,90,0.35); text-decoration-thickness:1px;
+    text-underline-offset:2px;
+    transition:text-decoration-color 0.15s;
+  }
+  .btn-link:hover{text-decoration-color:var(--accent);}
+  .card-cta{
+    margin-top:12px;
+  }
+  .card-cta .btn-drive{font-size:0.8rem; padding:7px 13px;}
+  .modal-note{
+    font-family:'Source Sans 3', sans-serif; font-size:0.82rem; color:var(--ink-faint);
+    margin:0; border-top:1px solid var(--line); padding-top:14px;
+  }
+
+  @media (max-width: 600px){
+    .modal-panel{padding:32px 24px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <button type="button" class="brand" data-scroll-target="top">Daniel Dorantes</button>
+    <div style="display:flex; align-items:center; gap:20px;">
+      <nav id="mainNav">
+        <ul>
+          <li><button type="button" data-scroll-target="sobre-mi">Sobre mí</button></li>
+          <li><button type="button" data-scroll-target="proyectos">Proyectos</button></li>
+          <li><button type="button" data-scroll-target="habilidades">Habilidades</button></li>
+          <li><button type="button" data-scroll-target="contacto">Contacto</button></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </div>
+</header>
+
+<hr class="rule">
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1600&q=80" alt="" loading="eager">
+    </div>
+    <div class="hero-inner">
+      <p class="hero-kicker sans">Marketing y patrocinio deportivo</p>
+      <h1>Joel Daniel Dorantes Sosa.</h1>
+      <p class="lede">Conecto aficionados, marcas y clubes a través de estrategias digitales que mueven al deporte. Busco mi primera posición en el departamento de marketing o patrocinio de un club profesional de fútbol.</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- SOBRE MI -->
+  <section id="sobre-mi">
+    <div class="wrap">
+      <p class="section-label sans">Sobre mí</p>
+      <h2>Mi historia.</h2>
+      <p>Soy un profesional mexicano de 29 años especializado en <strong>marketing y patrocinio deportivo</strong>, con un foco claro: ayudar a clubes profesionales de fútbol a construir relaciones más profundas y rentables con su afición.</p>
+      <p>Terminé un <strong>Máster en Marketing y Patrocinio Deportivo en UNISPORT Management School (España)</strong>, complementado con tres certificaciones del <strong>Barça Innovation Hub</strong> en social media, marketing deportivo y patrocinio &amp; comunicación, además de formación continua en marketing digital en Platzi.</p>
+      <p>Antes de eso viví un año en Texas haciendo un internship en un campamento, donde llevé mi inglés a un nivel <strong>B2 real, no de certificado</strong>. Esa mezcla de formación europea, base mexicana y experiencia en EE.UU. me da una mirada bicultural sobre cómo piensan y consumen los aficionados del fútbol.</p>
+      <p>Busco un entry-job en fan engagement, marketing deportivo, patrocinio deportivo y activaciones deportivas, donde pueda aportar ideas frescas y trabajar duro desde el primer día.</p>
+      <div class="credentials">
+        <span>29 años · México · Inglés B2</span>
+        <span>UNISPORT Management School · Barça Innovation Hub · Platzi</span>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- PROYECTOS -->
+  <section id="proyectos" style="background:var(--paper-dim);">
+    <div class="wrap-grid">
+      <p class="section-label sans">Proyectos</p>
+      <h2>Proyectos académicos.</h2>
+      <p style="color:var(--ink-soft); margin-bottom:8px; max-width:560px;">Una selección de 12 trabajos del máster y mi Trabajo Final de Máster. Cada uno aborda un reto real al que se enfrentan los clubes profesionales hoy.</p>
+
+      <div class="project-grid">
+
+        <div class="project-item tfm featured" data-project="tfm-phygital-fan-journey">
+          <div class="project-thumb"><svg viewBox="0 0 24 24"><circle cx="6.5" cy="13" r="3.5"/><circle cx="17.5" cy="13" r="3.5"/><path d="M10 13h4M3 13l1.5-6h15L21 13"/></svg></div>
+          <div>
+            <div class="project-head">
+              <span class="tfm-eyebrow">Trabajo Final de Máster</span>
+              <span class="project-title">Phygital Fan Journey</span>
+              <span class="project-meta sans">2024</span>
+            </div>
+            <p class="project-desc">Phygital Fan Journey para estadios de primera división con realidad aumentada.</p>
+            <div class="featured-cta">
+              <a class="btn-drive" href="#" target="_blank" rel="noopener" onclick="event.stopPropagation();" data-drive-trigger="tfm-phygital-fan-journey">Ver en Drive →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item" data-project="innovacion-andorra-fc">
+          <div class="project-thumb"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7l4 3-1.5 4.5h-5L8 10z"/><path d="M12 7V3.5M16 10l3.2-1M16 14l2.5 2.7M8 14l-2.5 2.7M8 10l-3.2-1M9.5 17.5h5"/></svg></div>
+          <div class="project-head">
+            <span class="project-title">Andorra FC</span>
+            <span class="project-meta sans">Innovación · 2024</span>
+          </div>
+          <p class="project-desc">Innovación en patrocinio, cantera y estadio durante su paso por la Tercera RFEF.</p>
+        </div>
+
+        <div class="project-item" data-project="liverpool-fc-fan-engagement">
+          <div class="project-thumb"><svg viewBox="0 0 24 24"><path d="M5 21V4"/><path d="M5 4l14 3.5L5 11"/></svg></div>
+          <div class="project-head">
+            <span class="project-title">Liverpool FC</span>
+            <span class="project-meta sans">Fan Engagement · 2024</span>
+          </div>
+          <p class="project-desc">Análisis de las técnicas de fan engagement del equipo inglés Liverpool FC.</p>
+        </div>
+
+        <div class="project-item" data-project="camp-olympia-journey">
+          <div class="project-thumb"><svg viewBox="0 0 24 24"><path d="M3 19l9-14 9 14z"/><path d="M12 5v14M7.5 19l4.5-7 4.5 7"/></svg></div>
+          <div class="project-head">
+            <span class="project-title">Camp Olympia</span>
+            <span class="project-meta sans">Customer Journey · 2024</span>
+          </div>
+          <p class="project-desc">Customer Journey Map de un campamento de verano en USA que opera todo el año.</p>
+        </div>
+
+        <div class="project-item" data-project="running-cartera-productos">
+          <div class="project-thumb"><svg viewBox="0 0 24 24"><path d="M3 17c0-1.5 1-2.5 2.5-3l4-1.5c1-0.4 1.7-1.3 1.9-2.4L12 6c0.3-1.2 1.4-2 2.6-2 1.5 0 2.4 1.2 2.1 2.6l-0.4 2c-0.2 1 0.3 2 1.2 2.5L21 13v4z"/><path d="M3 17h18v3H3z"/></svg></div>
+          <div class="project-head">
+            <span class="project-title">Running</span>
+            <span class="project-meta sans">Producto · 2024</span>
+          </div>
+          <p class="project-desc">Creación de una cartera nueva de productos para una marca de tenis de running.</p>
+        </div>
+
+        <div class="project-item" data-project="tenis-santander">
+          <div class="project-thumb"><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="6"/><path d="M9 5v8M5 9h8M6.3 6.3l5.4 5.4M11.7 6.3l-5.4 5.4"/><path d="M13.2 13.2L20 20"/></svg></div>
+          <div class="project-head">
+            <span class="project-title">Tenis Santander</span>
+            <span class="project-meta sans">Estrategia · 2024</span>
+          </div>
+          <p class="project-desc">Aumentar los ingresos del club de tenis y promover el tenis en la región local.</p>
+        </div>
+
+        <div class="project-item" data-project="gym-plan-marketing">
+          <div class="project-thumb"><svg viewBox="0 0 24 24"><rect x="2" y="9" width="3" height="6" rx="0.8"/><rect x="19" y="9" width="3" height="6" rx="0.8"/><rect x="5.5" y="7" width="2.5" height="10" rx="0.8"/><rect x="16" y="7" width="2.5" height="10" rx="0.8"/><path d="M8 12h8"/></svg></div>
+          <div class="project-head">
+            <span class="project-title">Gym</span>
+            <span class="project-meta sans">Marketing · 2024</span>
+          </div>
+          <p class="project-desc">Plan de Marketing de un gym con un presupuesto limitado.</p>
+        </div>
+
+        <div class="project-item" data-project="dossier-mexico-fc">
+          <div class="project-thumb"><svg viewBox="0 0 24 24"><path d="M6 2.5h9l4 4V21H6z"/><path d="M15 2.5V6.5h4"/><path d="M9 12h6M9 15.5h6M9 8.5h3"/></svg></div>
+          <div class="project-head">
+            <span class="project-title">Dossier de México FC</span>
+            <span class="project-meta sans">Patrocinio Deportivo · 2024</span>
+          </div>
+          <p class="project-desc">Dossier de patrocinio para el equipo de la Tercera RFEF de España, México FC.</p>
+        </div>
+
+        <div class="project-item" data-project="baloncesto-zaragoza">
+          <div class="project-thumb"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5v19"/><path d="M5 5c2.5 2 4 4.5 4 7s-1.5 5-4 7M19 5c-2.5 2-4 4.5-4 7s1.5 5 4 7"/></svg></div>
+          <div class="project-head">
+            <span class="project-title">Baloncesto Zaragoza</span>
+            <span class="project-meta sans">Fan Engagement · 2024</span>
+          </div>
+          <p class="project-desc">Aumentar la asistencia y potenciar la retención de los seguidores del club.</p>
+        </div>
+
+        <div class="project-item" data-project="ironman-70-3-valencia">
+          <div class="project-thumb"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 13V8.5M12 13l3 2"/><path d="M9.5 2.5h5M12 2.5V5"/></svg></div>
+          <div class="project-head">
+            <span class="project-title">IRONMAN 70.3</span>
+            <span class="project-meta sans">Eventos · 2024</span>
+          </div>
+          <p class="project-desc">Protocolo ceremonial del evento IRONMAN 70.3 celebrado en Valencia.</p>
+        </div>
+
+        <div class="project-item" data-project="esports-lvp">
+          <div class="project-thumb"><svg viewBox="0 0 24 24"><path d="M6.5 8h11l2 2.5L21 17a2 2 0 01-3.3 1.5L15 16H9l-2.7 2.5A2 2 0 013 17l1.5-6.5z"/><path d="M8 11v3M6.5 12.5h3"/><circle cx="15.5" cy="11.5" r="0.7"/><circle cx="17.5" cy="13.5" r="0.7"/></svg></div>
+          <div class="project-head">
+            <span class="project-title">Esports en la LVP</span>
+            <span class="project-meta sans">Esports · 2024</span>
+          </div>
+          <p class="project-desc">Creación y promoción de un nuevo equipo de esports en la Liga de Videojuegos Profesional.</p>
+        </div>
+
+        <div class="project-item" data-project="contenidos-digitales">
+          <div class="project-thumb"><svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M10 19h4"/><path d="M9.5 9a3.5 3.5 0 015 0M8 7a6 6 0 018 0"/></svg></div>
+          <div class="project-head">
+            <span class="project-title">Contenidos digitales</span>
+            <span class="project-meta sans">Social Media · 2024</span>
+          </div>
+          <p class="project-desc">Plan de contenidos digitales.</p>
+        </div>
+
+        <div class="project-item" data-project="river-park-rebranding">
+          <div class="project-thumb"><svg viewBox="0 0 24 24"><path d="M12 2.5l8 3v6c0 5-4 8.5-8 10-4-1.5-8-5-8-10v-6z"/><path d="M9 12l2 2 4-4.5"/></svg></div>
+          <div class="project-head">
+            <span class="project-title">River Park</span>
+            <span class="project-meta sans">Branding · 2024</span>
+          </div>
+          <p class="project-desc">Rebranding total del equipo ficticio River Park.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- HABILIDADES -->
+  <section id="habilidades">
+    <div class="wrap-wide">
+      <p class="section-label sans">Habilidades</p>
+      <h2>Lo que pongo sobre la cancha.</h2>
+      <p class="section-subtitle">Actualmente en formación sobre el uso de inteligencia artificial en la creación de contenido audiovisual en Platzi.</p>
+      <div class="skills-cols">
+        <div class="skill-col">
+          <h3>Fan &amp; Experiencia</h3>
+          <ul>
+            <li>Análisis del comportamiento del fan</li>
+            <li>Fan experience</li>
+            <li>Fan engagement</li>
+            <li>Customer journey</li>
+            <li>Customer experience</li>
+            <li>Fidelización del cliente</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h3>Estrategia &amp; Producto</h3>
+          <ul>
+            <li>Investigación de mercado</li>
+            <li>Desarrollo de productos/servicios deportivos</li>
+            <li>Estrategias de pricing</li>
+            <li>Creación de planes comerciales</li>
+            <li>Desarrollo del plan de marketing deportivo</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h3>Patrocinio, Eventos &amp; Digital</h3>
+          <ul>
+            <li>Gestión de patrocinios</li>
+            <li>Activación de patrocinios</li>
+            <li>Planeación de eventos deportivos</li>
+            <li>Ticketing</li>
+            <li>Protocolo de eventos deportivos</li>
+            <li>Comunicación deportiva</li>
+            <li>Marketing digital</li>
+            <li>Esports marketing</li>
+          </ul>
+        </div>
+      </div>
+      <p class="skills-note">Los certificados de estas formaciones se pueden encontrar en mi <a href="https://www.linkedin.com/in/joel-daniel-dorantes-sosa-005539306/" target="_blank" rel="noopener">perfil de LinkedIn</a>.</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="wrap">
+      <p class="section-label sans">Contacto</p>
+      <h2>¿Trabajamos juntos en tu próximo proyecto?</h2>
+      <p>Estoy buscando una primera oportunidad en un club profesional de fútbol. Si crees que puedo aportar a tu equipo, escríbeme.</p>
+      <div class="contact-list">
+        <div><span class="label">Email</span><a href="mailto:daniel.dorantess01@gmail.com">daniel.dorantess01@gmail.com</a></div>
+        <div><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/joel-daniel-dorantes-sosa-005539306/" target="_blank" rel="noopener">/in/joel-daniel-dorantes-sosa</a></div>
+        <div><span class="label">Teléfono</span><a href="tel:+522221113662">+52 222 111 3662</a></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Cerrar">✕ cerrar</button>
+    <span class="modal-tag sans" id="modalTag">Proyecto · 2024</span>
+    <h2 class="modal-title" id="modalTitle">Título del proyecto</h2>
+    <p class="modal-desc" id="modalDesc">Descripción del proyecto.</p>
+    <div class="modal-actions">
+      <a class="btn-drive" id="modalDriveLink" href="#" target="_blank" rel="noopener">Ver en Drive →</a>
+      <button type="button" class="btn-link" id="modalContactLink" data-scroll-target="contacto">Hablar sobre este proyecto →</button>
+    </div>
+    <p class="modal-note" id="modalNote">Enlace a Drive próximamente — sustituye el enlace en el código cuando lo subas.</p>
+  </div>
+</div>
+
+<hr class="rule">
+
+<footer>
+  <div class="wrap-wide">
+    <span>© 2026 Joel Daniel Dorantes Sosa</span>
+    <span>Marketing Deportivo · México</span>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle — un solo <nav>, se muestra/oculta con la clase "open"
+  const toggle = document.getElementById('navToggle');
+  const mainNav = document.getElementById('mainNav');
+  if (toggle && mainNav) {
+    toggle.addEventListener('click', () => {
+      mainNav.classList.toggle('open');
+    });
+  }
+
+  // Desplazamiento interno: ningún elemento usa href, así que no hay navegación que interceptar
+  function scrollToSection(id) {
+    const target = document.getElementById(id);
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  document.querySelectorAll('[data-scroll-target]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (mainNav) mainNav.classList.remove('open');
+      const overlayEl = document.getElementById('modalOverlay');
+      if (overlayEl && overlayEl.classList.contains('open')) {
+        overlayEl.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+      scrollToSection(el.dataset.scrollTarget);
+    }, { passive: false });
+  });
+
+  // ===== Datos de proyectos =====
+  // Para conectar tu carpeta o archivo de Google Drive: cambia "drive: null"
+  // por la URL para compartir de Drive, por ejemplo:
+  // drive: 'https://drive.google.com/file/d/TU_ID_DE_ARCHIVO/view'
+  const PROYECTOS = {
+    'tfm-phygital-fan-journey': {
+      tag: 'Trabajo Final de Máster · 2024',
+      title: 'Phygital Fan Journey',
+      desc: 'Este TFM busca crear un fan journey para el fan en estadios de primera división en donde la tecnología como realidad aumentada y realidad virtual guíen al fan en cada una de las fases de contacto con el club en los días de partido, creando también un sistema que puede utilizarse en días que no hay partido o para usar el estadio como sede de otros eventos como conciertos o torneos de Esports.',
+      drive: 'https://drive.google.com/drive/folders/1-3vVbiEZ3VtZZ0mey-dFrOx0Hik4JJJ2?usp=sharing'
+    },
+    'innovacion-andorra-fc': {
+      tag: 'Innovación · 2024',
+      title: 'Proyecto de innovación del Andorra FC',
+      desc: 'Innovación en patrocinio, cantera y estadio del Andorra FC durante su paso por la Tercera RFEF.',
+      drive: 'https://docs.google.com/document/d/1pBFUKZsbwmwM8mEgO4sScrT4TnSbr_OV/edit?usp=sharing&ouid=106114524373293120693&rtpof=true&sd=true'
+    },
+    'liverpool-fc-fan-engagement': {
+      tag: 'Fan Engagement · 2024',
+      title: 'Liverpool FC',
+      desc: 'Análisis de las técnicas de fan engagement del equipo inglés Liverpool FC.',
+      drive: 'https://docs.google.com/document/d/1Kmh9Qeqp4oNES2kJxvSVbClMYmNNx1IK/edit?usp=sharing&ouid=106114524373293120693&rtpof=true&sd=true'
+    },
+    'camp-olympia-journey': {
+      tag: 'Customer Journey · 2024',
+      title: 'Camp Olympia',
+      desc: 'Customer Journey Map de un campamento de verano en USA que opera todo el año.',
+      drive: 'https://docs.google.com/document/d/1X8DK83PiIcsmuDCaZ_VYnSzGUc7tYmAD/edit?usp=sharing&ouid=106114524373293120693&rtpof=true&sd=true'
+    },
+    'running-cartera-productos': {
+      tag: 'Producto · 2024',
+      title: 'Running',
+      desc: 'Creación de una cartera nueva de productos para una nueva marca de tenis de running.',
+      drive: 'https://docs.google.com/document/d/1eLSHFrhhx8bPpfikn0SsXO7RDgZ1ZAgl/edit?usp=sharing&ouid=106114524373293120693&rtpof=true&sd=true'
+    },
+    'tenis-santander': {
+      tag: 'Estrategia · 2024',
+      title: 'Tenis Santander',
+      desc: 'Aumentar los ingresos del club de tenis y promover el tenis en la región local.',
+      drive: 'https://docs.google.com/document/d/1vVCJnGsbH8l7-1DRoBekDVBo-glt193R/edit?usp=sharing&ouid=106114524373293120693&rtpof=true&sd=true'
+    },
+    'gym-plan-marketing': {
+      tag: 'Marketing · 2024',
+      title: 'Gym',
+      desc: 'Plan de Marketing de un gym con un presupuesto limitado.',
+      drive: 'https://docs.google.com/document/d/1UXV6m-_d9yS4bJf7t8BrJXW4ywS_DZvb/edit?usp=sharing&ouid=106114524373293120693&rtpof=true&sd=true'
+    },
+    'dossier-mexico-fc': {
+      tag: 'Patrocinio Deportivo · 2024',
+      title: 'Dossier de México FC',
+      desc: 'Dossier de patrocinio deportivo para el equipo de la Tercera RFEF de España, México FC.',
+      drive: 'https://docs.google.com/presentation/d/1JdOH1qVvnkPvuqHk8whEm5iq5iM3Qwco/edit?usp=sharing&ouid=106114524373293120693&rtpof=true&sd=true'
+    },
+    'baloncesto-zaragoza': {
+      tag: 'Fan Engagement · 2024',
+      title: 'Baloncesto Zaragoza',
+      desc: 'Aumentar la asistencia y potenciar la retención de los seguidores del club.',
+      drive: 'https://docs.google.com/document/d/18Vro44JmHY_E4KslfcIuq6kDDzJD_-Go/edit?usp=sharing&ouid=106114524373293120693&rtpof=true&sd=true'
+    },
+    'ironman-70-3-valencia': {
+      tag: 'Eventos · 2024',
+      title: 'IRONMAN 70.3',
+      desc: 'Protocolo ceremonial del evento IRONMAN 70.3 celebrado en Valencia.',
+      drive: 'https://docs.google.com/document/d/1H3YVB011MnIaneyh3cvNvrnSfGYoDpMG/edit?usp=sharing&ouid=106114524373293120693&rtpof=true&sd=true'
+    },
+    'esports-lvp': {
+      tag: 'Esports · 2024',
+      title: 'Esports en la LVP',
+      desc: 'Creación y promoción de un nuevo equipo de esports en la Liga de Videojuegos Profesional en España.',
+      drive: 'https://docs.google.com/document/d/1TCJbXtdjSReBxQbjFuUMVr47gLWCD6Qd/edit?usp=sharing&ouid=106114524373293120693&rtpof=true&sd=true'
+    },
+    'contenidos-digitales': {
+      tag: 'Social Media · 2024',
+      title: 'Contenidos digitales',
+      desc: 'Plan de contenidos digitales.',
+      drive: 'https://docs.google.com/document/d/1lA7vZndJW5rHUUYdzrW1TYm4nlJqBU7s/edit?usp=sharing&ouid=106114524373293120693&rtpof=true&sd=true'
+    },
+    'river-park-rebranding': {
+      tag: 'Branding · 2024',
+      title: 'River Park',
+      desc: 'Rebranding total del equipo ficticio River Park.',
+      drive: 'https://docs.google.com/document/d/1vdM8LK3RSqCWr9pnPDFsCtqWvrw-BC9m/edit?usp=sharing&ouid=106114524373293120693&rtpof=true&sd=true'
+    }
+  };
+
+  // ===== Lógica del modal =====
+  const overlay = document.getElementById('modalOverlay');
+  const modalTag = document.getElementById('modalTag');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalDriveLink = document.getElementById('modalDriveLink');
+  const modalNote = document.getElementById('modalNote');
+  const modalClose = document.getElementById('modalClose');
+
+  function openProjectModal(key) {
+    const data = PROYECTOS[key];
+    if (!data) return;
+    modalTag.textContent = data.tag;
+    modalTitle.textContent = data.title;
+    modalDesc.textContent = data.desc;
+
+    if (data.drive) {
+      modalDriveLink.href = data.drive;
+      modalDriveLink.style.display = 'inline-flex';
+      modalNote.style.display = 'none';
+    } else {
+      modalDriveLink.style.display = 'none';
+      modalNote.style.display = 'block';
+    }
+
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeProjectModal() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.project-item').forEach(item => {
+    item.addEventListener('click', () => {
+      openProjectModal(item.dataset.project);
+    });
+  });
+
+  // Botones "Ver en Drive" visibles directamente en tarjetas (ej. el TFM destacado)
+  document.querySelectorAll('[data-drive-trigger]').forEach(btn => {
+    const key = btn.dataset.driveTrigger;
+    const data = PROYECTOS[key];
+    if (data && data.drive) {
+      btn.href = data.drive;
+    } else {
+      btn.classList.add('disabled');
+      btn.textContent = 'Drive próximamente';
+      btn.removeAttribute('href');
+    }
+  });
+
+  modalClose.addEventListener('click', closeProjectModal);
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeProjectModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closeProjectModal();
+  });
+</script>
+
+</body>
+</html>
